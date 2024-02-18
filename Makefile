@@ -11,6 +11,10 @@ test:
 	go test ./... -covermode=count -coverprofile=coverage.out -coverpkg=./... -json > tests.out
 .PHONY: test
 
+## lint
+lint:
+	golangci-lint run
+
 ## build: build the producer
 compile-producer:
 	CGO_ENABLED=0 go build -o ./out/producer ./cmd/producer

@@ -116,3 +116,7 @@ The result will be as follows
 Kafka will look like this 
 
 ![img_1.png](img_1.png)
+
+``
+brew install mockery
+``

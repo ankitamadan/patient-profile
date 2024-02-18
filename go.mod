@@ -13,5 +13,6 @@ require (
 	github.com/go-ozzo/ozzo-validation/v4 v4.3.0
 	github.com/klauspost/compress v1.11.6 // indirect
 	github.com/stretchr/testify v1.6.1
-	golang.org/x/net v0.14.0 // indirect
+	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
+	golang.org/x/tools v0.18.0 // indirect
 )

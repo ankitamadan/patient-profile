@@ -48,6 +48,7 @@ func createLocalClient(ctx context.Context, awsRegion, awsEndpoint string) *dyna
 		panic(err)
 	}
 
+	// nolint:staticcheck
 	cfg.EndpointResolverWithOptions = aws.EndpointResolverWithOptionsFunc(func(service, region string, options ...interface{}) (aws.Endpoint, error) {
 		return aws.Endpoint{
 			URL:           awsEndpoint,
