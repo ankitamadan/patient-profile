@@ -1,6 +1,6 @@
 ### Background
 
-The microservices are composed of two services: the Profile service and the Consultation service. The Profile service manages the patient's medical and demographic information, while the Consultation service manages GP appointment information and other information related to appointment management. Apache Kafka is used for event streaming, and the focus of this code test is the "Patient Profile Updated" event. This event is used for streaming patient profile updating events from the Profile service to the Consultation service.
+The microservices are composed of two services: the Profile service and the Consultation service. The Profile service manages the patient's medical and demographic information, while the Consultation service manages GP appointment information and other information related to appointment management. Apache Kafka is used for event streaming. The `Patient Profile Updated` event is used for streaming patient profile updating events from the Profile service to the Consultation service.
 
 In other words, the Profile service stores information about the original data of the patient profile entity, while the Consultation service stores the replicated data. The data is synchronized using Kafka event streaming. The Profile service is the event producer, while the Consultation service is the event consumer.
 
@@ -54,7 +54,7 @@ Common terms we use in package structure
    - This folder contains the main application entry point files for this project. It contains two folders /producer and /consumer and their respective main.go to start producer and consumer respectively where as producer is an api to publish events to kafka and consumer is to consume the corresponding event and persist in database
 2. **/devstack**
 
-   - This folder contains a script to run the database locally. For ease of running it locally, easier to connect to localstack that mimics DynamoDB as opposed to connecting to DynamoDB every time
+   - This folder contains a script to run the database locally. For ease of running it locally, easier to connect to `localstack` that mimics DynamoDB as opposed to connecting to DynamoDB every time
 3. **/internal**
 
     - This package holds the private library code used in your service, it is specific to the function of the service and not shared with other services. This is the place wherein components are organized by kind.
