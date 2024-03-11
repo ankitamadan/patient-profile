@@ -106,7 +106,16 @@ The consumer struct depends on StoreWriter and ConsumerClient interface rather t
 
 ### Advantages of Localstack
 
+LocalStack provides an easy-to-use test/mocking framework for developing Cloud applications. It spins up a testing environment on your local machine that provides the same functionality and APIs as the real AWS cloud environment.
 
+This is exactly what we needed.
+As simple as that, LocalStack starts a real AWS cloud environment on your laptop. It currently supports around 30 popular AWS services and counting.
+
+##### Impact
+
+Can run the entire cloud infrastructure locally and can experiment, test functionality and do whatever they want in full isolation.
+We no longer spend time debugging race conditions or trying to figure out who deleted an item or resource, or what IAM permissions a certain service or resource needs in order to access another resource.
+Our cloud costs have dropped significantly, and the load on our DevOps engineer has decreased dramatically.
 
 ## Steps to execute
 
