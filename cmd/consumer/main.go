@@ -22,7 +22,7 @@ func main() {
 	ctx := context.TODO()
 
 	// Using the Config value, create the DynamoDB client
-	ddbClient := createLocalClient(ctx, cfg.AWSRegion, cfg.DdbHost)
+	ddbClient := createClient(ctx, cfg.AWSRegion, cfg.DdbHost)
 
 	consumerClient, err := connectConsumer([]string{cfg.KafkaHost})
 	if err != nil {
@@ -39,7 +39,7 @@ func main() {
 
 }
 
-func createLocalClient(ctx context.Context, awsRegion, awsEndpoint string) *dynamodb.Client {
+func createClient(ctx context.Context, awsRegion, awsEndpoint string) *dynamodb.Client {
 	cfg, err := config.LoadDefaultConfig(ctx,
 		config.WithRegion(awsRegion),
 		config.WithClientLogMode(aws.LogRequest|aws.LogRetries),
