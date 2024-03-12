@@ -34,12 +34,6 @@ Kafka guarantees the order of the events within the same topic partition. Howeve
 
 In order to guarantee ordered message delivery with the Kafka messaging broker, messages can be produced with a key called `Message Key`. Messages with the same key are written to the same topic partition, and as consumers read messages in order from each partition, their ordering is preserved'
 
-#### Message Keys
-
-In order to guarantee message ordering, related messages that should be ordered must be written to the same topic partition. This is achieved by writing the message with a header key. There is a less common alternative to using a message key which is for the producer itself to stipulate which partition to write a message to.
-
-As with the message body, the key can be typed as required, such as a String, Integer or a JSON object. Likewise, as with the body, the key can have an Avro schema defined. The key is hashed by the producer, and this hash is used to determine which partition to write the message to. If no message with this hashed key has yet been written to a partition, (or indeed no key has been included) then a new partition will be selected, with Kafka typically attempting to spread load evenly across the partitions.
-
 ### Patient Profile
 
 `/patientprofile` is an endpoint which publishes event called `patient.profile.updated` on kafka and it has a consumer which consumes the kafka event `patient.profile.updated` and thereby persist the data in the database.
